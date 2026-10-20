@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gvemmanuel3712-cyber.github.io/sitemap.xml

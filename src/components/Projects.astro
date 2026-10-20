@@ -1,0 +1,37 @@
+---
+import Icon from './Icon.astro';
+import PixelSatellite from './PixelSatellite.astro';
+---
+<section class="work-section shell section-space" id="work" aria-labelledby="work-title">
+  <div class="section-divider"><span class="mono" data-i18n="selected">Selected work</span><span></span></div>
+  <div class="section-heading" data-reveal><h2 id="work-title"><span data-i18n="builtLead">Built </span><span class="gradient-text" data-i18n="builtAccent">with </span><span data-i18n="builtTail">intent.</span></h2><a class="text-link" href="https://github.com/gvemmanuel3712-cyber?tab=repositories" target="_blank" rel="noopener noreferrer"><span data-i18n="allWork">All public work</span><Icon name="external" size={17}/></a></div>
+  <div class="project-grid">
+    <article class="project-card project-featured panel" data-reveal>
+      <div class="project-title"><Icon name="browser" size={28}/><div><h3 data-i18n="portfolio">This portfolio</h3><p class="mono" data-i18n="portfolioDesc">A fast, static developer playground.</p></div></div>
+      <div class="browser-blueprint" aria-hidden="true"><div class="blueprint-chrome"><i></i><i></i><i></i><span>~/portfolio/index.astro</span></div><div class="blueprint-body"><pre><span>---</span>
+import Layout from
+  '../layouts/Base.astro';
+<span>---</span>
+
+&lt;Layout&gt;
+  &lt;Hero /&gt;
+  &lt;Projects /&gt;
+  &lt;Playground /&gt;
+&lt;/Layout&gt;</pre><div class="mini-preview"><div class="mini-hero"><span></span><span></span><span></span><svg viewBox="0 0 160 75"><path d="m0 75 55-65 44 46 28-30 33 49"/><circle cx="142" cy="13" r="10"/></svg></div><div class="mini-cards"><div></div><div></div><div></div></div></div></div></div>
+      <div class="project-bottom"><ul class="tech-inline" aria-label="Portfolio technologies"><li>Astro</li><li>TypeScript</li><li>Tailwind</li></ul><a class="button button-small" href="/projects/portfolio/"><span data-i18n="buildNotes">Build notes</span><Icon name="external" size={16}/></a></div>
+    </article>
+    <article class="project-card panel" data-reveal>
+      <div class="project-title"><Icon name="github" size={27}/><h3 data-i18n="profile">GitHub Profile</h3></div>
+      <p class="project-description mono" data-i18n="profileDesc">A visual identity, built with versioned assets.</p>
+      <div class="pixel-frame" aria-hidden="true"><span class="crosshair crosshair-top"></span><PixelSatellite/><span class="crosshair crosshair-bottom"></span></div>
+      <ul class="tech-inline small-tech" aria-label="Profile technologies"><li>Markdown</li><li>SVG</li><li>Automation</li></ul>
+      <a class="button button-small" href="https://github.com/gvemmanuel3712-cyber/gvemmanuel3712-cyber" target="_blank" rel="noopener noreferrer"><span data-i18n="source">Source</span><Icon name="external" size={16}/></a>
+    </article>
+    <article class="project-card panel" data-reveal>
+      <div class="project-title"><Icon name="document" size={28}/><h3>Opero Docs</h3></div>
+      <p class="project-description mono" data-i18n="operoDesc">A personal exploration of software solutions and automation.</p>
+      <svg class="documents-blueprint" viewBox="0 0 260 190" aria-hidden="true"><g fill="#0B1120" stroke="#38BDF8" stroke-width="1.2"><rect x="75" y="15" width="160" height="120" rx="5" stroke-dasharray="2 9"/><rect x="35" y="42" width="145" height="115" rx="5"/><rect x="15" y="70" width="165" height="115" rx="5"/></g><g fill="#2563EB"><circle cx="29" cy="83" r="3"/><circle cx="40" cy="83" r="3"/><circle cx="51" cy="83" r="3"/></g><path d="M30 100h126M30 119h75M30 135h94M30 151h62" stroke="#38BDF8" opacity=".6" stroke-width="2"/></svg>
+      <p class="private-status mono"><Icon name="lock" size={17}/><span data-i18n="privateStatus">Private · In development</span></p>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+---
+import SignalCore from './SignalCore.astro';
+import Icon from './Icon.astro';
+---
+<section class="hero shell" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <h1 id="hero-title"><span>Emmanuel</span><span>Guevara</span><span class="gradient-text">Vásquez.</span></h1>
+    <p class="hero-role mono" data-i18n="role">Software Engineering student · ITESO</p>
+    <p class="hero-intro mono" data-i18n="intro">I turn curiosity into code. Learning to build useful, secure and maintainable software.</p>
+    <div class="hero-actions"><a class="button button-primary" href="#work"><span data-i18n="explore">Explore my work</span><Icon name="arrow"/></a><a class="button button-secondary" href="#playground" data-open-terminal><Icon name="terminal"/><span data-i18n="openTerminal">Open terminal</span></a></div>
+    <p class="location mono"><Icon name="pin" size={18}/> Guadalajara, México</p>
+  </div>
+  <div class="profile-scan panel" data-tilt>
+    <div class="panel-caption mono"><span>PROFILE SCAN / 01</span><span class="scan-progress" aria-hidden="true"></span></div>
+    <SignalCore/>
+    <p class="scan-motto gradient-text mono" data-i18n="curiosity">Curiosity → code</p>
+    <dl class="scan-details mono"><div><dt data-i18n="roleLabel">role</dt><dd data-i18n="student">Student</dd></div><div><dt data-i18n="university">university</dt><dd>ITESO</dd></div><div><dt data-i18n="focus">focus</dt><dd data-i18n="focusValue">Software &amp; automation</dd></div></dl>
+  </div>
+</section>

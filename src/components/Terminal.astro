@@ -1,0 +1,9 @@
+---
+import { runCommand } from '../lib/terminal.mjs';
+---
+<div class="terminal panel" role="region" aria-label="Interactive portfolio terminal" data-i18n-aria="terminalLabel">
+  <div class="terminal-chrome"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="mono">emmanuel@playground ~</span><button type="button" id="terminal-clear" aria-label="Clear terminal" data-i18n-aria="terminalClear" title="Clear">⌫</button></div>
+  <div class="terminal-screen mono"><div id="terminal-output" role="log" aria-live="polite" aria-relevant="additions text"><div class="terminal-command"><span>$</span> help</div>{runCommand('help').lines.map(line=><div class="terminal-line">{line.text}</div>)}</div><form id="terminal-form" autocomplete="off"><label for="terminal-input" aria-hidden="true">$</label><input id="terminal-input" type="text" maxlength="160" spellcheck="false" autocapitalize="none" aria-label="Type a command" data-i18n-aria="terminalInput" aria-describedby="terminal-hint" placeholder="_"/><button class="sr-only" tabindex="-1" type="submit" data-i18n="run">Run</button></form></div>
+  <p id="terminal-hint" class="terminal-hint mono" data-i18n="terminalHint">Try help, about, skills or projects. ↑ ↓ for history.</p>
+  <div class="terminal-shortcuts">{['help','about','skills','projects'].map(command=><button type="button" data-command={command}>{command}</button>)}</div>
+</div>

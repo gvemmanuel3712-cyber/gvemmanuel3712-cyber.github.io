@@ -1,0 +1,16 @@
+---
+import '../styles/global.css';
+const { title = 'Emmanuel Guevara Vásquez — Developer Playground', description = 'Software Engineering student at ITESO, Guadalajara. Personal projects, software architecture, automation and a little curiosity.', path = '/' } = Astro.props;
+const canonical = new URL(path, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#05070D"/><meta name="description" content={description}/>
+    <title>{title}</title><link rel="canonical" href={canonical}/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+    <meta property="og:type" content="website"/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:image" content={new URL('/og.png',Astro.site)}/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="Emmanuel Guevara Vásquez — Software Engineering student at ITESO"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+  </head>
+  <body><a class="skip-link" href="#main" data-i18n="skip">Skip to content</a><slot/><script>import '../scripts/client';</script></body>
+</html>

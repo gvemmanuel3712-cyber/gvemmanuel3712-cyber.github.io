@@ -1,0 +1,14 @@
+---
+import Icon from './Icon.astro';
+---
+<section class="bento-grid shell" id="toolbox" aria-labelledby="toolbox-title">
+  <article class="education-card panel" data-reveal>
+    <svg class="university-blueprint" viewBox="0 0 280 230" aria-label="Symbolic university building" role="img"><g fill="none" stroke="#38BDF8" stroke-width="1"><path d="M12 210h256M45 210V100l82-43 105 53v100M45 100l105 45 82-35M127 57v153m23-65v65M65 110v100m20-90v90m20-80v80M162 151l48-19v78m-26-70v70M232 110V20m-13 18h27M52 147l77 33m-77-11 77 33"/><path d="M20 210v-51c-21-9-4-24-6-43-2-18 10-29 13-1 4 24 19 36-2 46m225 49v-44c-20-8-5-23-4-36 2-15 12-11 12 4 0 14 17 29-2 34" stroke="#2DD4BF"/></g></svg>
+    <div><p class="mono education-note" data-i18n="education">Learning the foundations. Building what comes next.</p><h3>ITESO</h3><p class="mono" data-i18n="degree">Ingeniería en Desarrollo de Software</p><p class="location mono"><Icon name="pin" size={16}/> Guadalajara, México</p></div>
+  </article>
+  <article class="toolbox-card panel" data-reveal>
+    <h2 id="toolbox-title"><Icon name="wrench" size={23}/><span data-i18n="toolsTitle">Developer toolbox</span></h2>
+    <div class="toolbox-columns"><div><h3><Icon name="code" size={21}/><span data-i18n="practice">Project practice</span></h3><ul class="tool-list mono">{[['Py','Python'],['TS','TypeScript'],['JS','JavaScript'],['DB','SQL'],['git','Git']].map(([symbol,label])=><li><span class="tool-symbol" aria-hidden="true">{symbol}</span>{label}</li>)}</ul></div><div><h3><Icon name="book" size={21}/><span data-i18n="academic">Academic foundations</span></h3><ul class="tool-list mono academic-list"><li><span class="tool-symbol" aria-hidden="true">Jv</span><span data-i18n="java">Java · Object-oriented programming</span></li><li><span class="tool-symbol" aria-hidden="true">C</span><span data-i18n="c">C · Data structures</span></li></ul></div></div>
+    <div class="learning-row"><span data-i18n="learning">Learning through projects</span><p class="mono">React · Next.js · Vue · FastAPI · SQLite · PostgreSQL</p></div>
+  </article>
+</section>

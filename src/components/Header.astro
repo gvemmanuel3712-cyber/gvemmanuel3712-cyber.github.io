@@ -1,0 +1,17 @@
+---
+import Icon from './Icon.astro';
+const { home = false } = Astro.props;
+const root = home ? '' : '/';
+---
+<header class="site-header shell">
+  <a class="brand" href="/" aria-label="Emmanuel Guevara Vásquez — home">EG<span class="brand-pixel"></span></a>
+  <nav aria-label="Main navigation">
+    <a href={`${root}#work`} data-i18n="work">Work</a>
+    <a href={`${root}#toolbox`} data-i18n="toolbox">Toolbox</a>
+    <a href={`${root}#playground`} data-i18n="playground">Playground</a>
+  </nav>
+  <div class="header-actions">
+    <div class="language-switch" aria-label="Language / Idioma"><button type="button" data-language="en" aria-label="English" aria-pressed="true">EN</button><span aria-hidden="true">/</span><button type="button" data-language="es" aria-label="Español" aria-pressed="false">ES</button></div>
+    <a class="github-link" href="https://github.com/gvemmanuel3712-cyber" target="_blank" rel="noopener noreferrer">GitHub <Icon name="external" size={17}/></a>
+  </div>
+</header>

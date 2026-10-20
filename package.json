@@ -1,0 +1,28 @@
+{
+  "name": "emmanuel-developer-playground",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "check": "astro check",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "sync:github": "python3 scripts/sync_github.py",
+    "test": "node --test tests/*.test.mjs && python3 -m unittest discover -s tests -p 'test_*.py'"
+  },
+  "dependencies": {
+    "astro": "7.4.1",
+    "@tailwindcss/vite": "4.3.3",
+    "tailwindcss": "4.3.3",
+    "@fontsource-variable/space-grotesk": "5.3.0",
+    "@fontsource/ibm-plex-mono": "5.3.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.11",
+    "typescript": "6.0.3"
+  }
+}

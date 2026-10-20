@@ -1,0 +1,24 @@
+---
+import snapshot from '../../data/github.json';
+import Icon from './Icon.astro';
+import PixelSatellite from './PixelSatellite.astro';
+const days = snapshot.calendar.days;
+const colors = ['#111D35','#164E63','#0369A1','#0284C7','#38BDF8'];
+const monthCandidates = days.map((day,index)=>({date:day.date,index})).filter(({date,index})=>index===0 || date.endsWith('-01'));
+const months = monthCandidates.filter((_,i)=>i!==0 || !monthCandidates[1] || monthCandidates[1].index>=21);
+const dateText = new Intl.DateTimeFormat('en',{day:'2-digit',month:'short',year:'numeric',timeZone:'UTC'}).format(new Date(snapshot.checkedAt));
+---
+<div class="activity panel" data-calendar-end={snapshot.calendar.end}>
+  <div class="activity-header"><h3 data-i18n="publicSignals">Public signals</h3><button type="button" class="signal-button" data-command="contact" aria-label="Say hello in the terminal" data-i18n-aria="signal" title="Say hello"><PixelSatellite/></button></div>
+  <div class="activity-metrics"><div><strong data-activity-total>{snapshot.calendar.total}</strong><span data-stat-label="contributions">contributions</span></div><div><strong>{snapshot.profile.public_repos}</strong><span data-stat-label="repositories">{snapshot.profile.public_repos===1?'public repository':'public repositories'}</span></div><div><strong data-activity-days>{snapshot.calendar.activeDays}</strong><span data-stat-label="activeDays">active days</span></div></div>
+  <div class="period-controls" role="group" aria-label="Calendar period"><button type="button" data-period="30" aria-pressed="false">30d</button><button type="button" data-period="90" aria-pressed="false">90d</button><button type="button" data-period="year" aria-pressed="true" data-i18n="year">Year</button></div>
+  <svg class="contribution-calendar" viewBox="0 0 674 126" role="img" aria-labelledby="calendar-title calendar-description"><title id="calendar-title">Public GitHub contribution calendar</title><desc id="calendar-description">{snapshot.calendar.total} contributions across {snapshot.calendar.activeDays} active days, from {snapshot.calendar.start} to {snapshot.calendar.end}. Snapshot, not a proficiency score.</desc>
+    <g class="calendar-months">{months.map(({date,index})=><text x={30+Math.floor(index/7)*12} y="12" data-month-date={date}>{new Date(date+'T00:00:00Z').toLocaleString('en',{month:'short',timeZone:'UTC'})}</text>)}</g>
+    <g class="calendar-weekdays"><text x="0" y="46">M</text><text x="0" y="70">W</text><text x="0" y="94">F</text></g>
+    {days.map((day,index)=><rect x={30+Math.floor(index/7)*12} y={24+(index%7)*12} width="9" height="9" rx="1.3" fill={colors[day.level]} data-day={day.date} data-count={day.count} data-level={day.level}><title>{day.date}: {day.count} contributions</title></rect>)}
+  </svg>
+  <div class="calendar-legend mono"><span data-i18n="less">Less</span>{colors.map(color=><i style={`background:${color}`} aria-hidden="true"></i>)}<span data-i18n="more">More</span></div>
+  <p class="activity-note" data-i18n="activityNote">Publicly visible GitHub events, not a measure of experience.</p>
+  <details class="calendar-details"><summary data-i18n="calendarDetails">Explore contribution dates</summary><table><thead><tr><th data-i18n="date">Date</th><th data-i18n="count">Contributions</th></tr></thead><tbody>{days.filter(day=>day.count>0).map(day=><tr data-activity-row={day.date}><td><time datetime={day.date} data-format-date={day.date}>{day.date}</time></td><td>{day.count}</td></tr>)}</tbody></table><p class="no-dates" hidden data-i18n="noDates">No contributions in this period.</p></details>
+  <div class="activity-footer mono"><span><span data-i18n="snapshot">Public snapshot</span> · <time datetime={snapshot.checkedAt} data-format-date={snapshot.checkedAt}>{dateText}</time></span><a class="text-link" href="https://github.com/gvemmanuel3712-cyber?tab=overview" target="_blank" rel="noopener noreferrer"><span data-i18n="onGithub">View on GitHub</span><Icon name="external" size={15}/></a></div>
+</div>

@@ -1,0 +1,30 @@
+---
+const { id = 'hero-core' } = Astro.props;
+---
+<svg class="signal-core" viewBox="0 0 600 390" role="img" aria-labelledby={`${id}-title`}>
+  <title id={`${id}-title`}>A map of curiosity: code, systems, data and automation</title>
+  <defs>
+    <linearGradient id={`${id}-face`} x2="0" y2="1"><stop stop-color="#123D68"/><stop offset="1" stop-color="#0B1120"/></linearGradient>
+    <linearGradient id={`${id}-edge`}><stop stop-color="#2563EB"/><stop offset="1" stop-color="#38BDF8"/></linearGradient>
+    <pattern id={`${id}-dots`} width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#38BDF8" opacity=".2"/></pattern>
+  </defs>
+  <rect width="600" height="390" fill={`url(#${id}-dots)`}/>
+  <g class="core-orbit" fill="none" stroke="#38BDF8" stroke-width="1" opacity=".65">
+    <ellipse cx="300" cy="198" rx="230" ry="114" stroke-dasharray="3 5"/>
+    <ellipse cx="300" cy="198" rx="166" ry="145"/>
+  </g>
+  <g fill="none" stroke="#2563EB" opacity=".65"><path d="M300 45v300M64 198h472"/><path d="m134 83 332 230M134 313 466 83" stroke-dasharray="2 7"/></g>
+  <g class="core-float" stroke="#38BDF8" stroke-linejoin="round" stroke-width="2">
+    <path d="m190 180 110-64 110 64-110 64Z" fill={`url(#${id}-face)`}/>
+    <path d="M190 180v37l110 65v-38Zm110 64 110-64v37l-110 65Z" fill="#0B1E35"/>
+    <path d="m209 213 71 42m40 0 71-42" stroke-width="4"/>
+    <g stroke-width="5" fill="none" stroke-linecap="round"><path d="m279 164-22 15 22 14m43-29 22 15-22 14m-15-39-15 50"/></g>
+  </g>
+  <g stroke="#38BDF8" stroke-width="1.5" fill="#0B1120">
+    <path d="m300 16 30 18v35l-30 18-30-18V34Zm0 303 30 18v35l-30 18-30-18v-35Z" transform="translate(0 -8)"/>
+    <path d="m75 163 30 18v35l-30 18-30-18v-35Zm450 0 30 18v35l-30 18-30-18v-35Z"/>
+    <path d="M289 27h13l8 8v18h-21Zm13 0v9h8m-17 7h12M63 187l10 9-10 9m17 0h9m429-21 13 25m-19-7h25" fill="none"/>
+    <ellipse cx="300" cy="350" rx="11" ry="5"/><path d="M289 350v16c0 7 22 7 22 0v-16m-22 8c0 7 22 7 22 0" fill="none"/>
+  </g>
+  <g class="core-dots" fill="#38BDF8"><circle cx="134" cy="147" r="4"/><circle cx="466" cy="160" r="4"/><circle cx="436" cy="270" r="4"/><circle cx="173" cy="278" r="4"/></g>
+</svg>
